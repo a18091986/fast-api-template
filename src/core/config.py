@@ -10,8 +10,10 @@ class ServerConfig(BaseModel):
     port: int = 1234
     host: str = "0.0.0.0"
 
+
 class ApiPrefixConfig(BaseModel):
     prefix: str = "/api"
+
 
 class DatabaseConfig(BaseModel):
     url: str = os.getenv("APP_CONFIG__DB__URL")
@@ -19,6 +21,7 @@ class DatabaseConfig(BaseModel):
     echo_pool: bool = False
     pool_size: int = 50
     max_overflow: int = 20
+
 
 class Settings(BaseSettings):
     server: ServerConfig = ServerConfig()
